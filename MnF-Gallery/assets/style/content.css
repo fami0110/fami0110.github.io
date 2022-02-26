@@ -1,0 +1,159 @@
+/*---- This file is containing all css for the pages content ----*/
+
+/* Homepage | Hero */
+
+.hero {
+  height: 530px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.hero-title h1 {
+  font-family: "Lobster", cursive;
+  font-size: 70px;
+  transition: 0.8s cubic-bezier(0.7, -0.52, 0.38, 1.51) 0.5s;
+}
+
+.hero-title span {
+  font-size: 50px;
+  transition: 0.8s cubic-bezier(0.7, -0.52, 0.38, 1.51) 0.5s;
+}
+
+.hero-title p {
+  font-family: "Shippori Antique B1", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  line-height: 28px;
+  margin: 18px 8px 0;
+  transition: 0.8s cubic-bezier(0.7, -0.52, 0.38, 1.51) 1s;
+}
+
+.hero:hover {
+  height: 553px;
+}
+.hero-title:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Homepage | Hero Line */
+
+.hero-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: rgb(31, 31, 31);
+  height: 25px;
+}
+
+#dots {
+  transform: rotate(90deg);
+  filter: invert(35%);
+  width: 25px;
+  margin: 0 3px;
+}
+
+/* Homepage | Proem */
+
+.proem {
+  padding: 60px 32px 70px;
+  margin: 40px 0 32px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.proem h2 {
+  font-family: "Road Rage", cursive;
+  text-align: center;
+  font-size: 5rem;
+  color: rgb(31, 31, 31);
+  margin-bottom: 32px;
+}
+
+.proem p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  max-width: 720px;
+}
+
+.proem-p1,
+.proem-p2 {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+
+/*---- Responsive | Small Devices ----*/
+
+@media only screen and (max-width: 700px) {
+  /* Hompage | Hero Text */
+  .hero-title h1 {
+    font-size: 60px;
+  }
+  .hero-title span {
+    font-size: 40px;
+  }
+  .hero-title p {
+    font-size: 18px;
+  }
+  /* Homepage | Proem */
+  .proem-p1,
+  .proem-p2 {
+    flex-flow: column;
+  }
+  .proem-p1 img,
+  .proem-p2 img {
+    width: 200px;
+    margin-bottom: 12px;
+  }
+  .proem p {
+    text-align: center;
+  }
+}
+
+/*---- Responsive | Medium Devices ----*/
+
+@media only screen and (min-width: 700px) {
+  /* Homepage | Proem */
+  .proem-p1 img {
+    order: 2;
+    margin-left: 32px;
+    height: 200px;
+  }
+  .proem-p2 img {
+    margin-right: 32px;
+    height: 200px;
+  }
+  .proem p {
+    text-align: justify;
+    text-indent: 32px;
+  }
+}
+
+/*---- Responsive | Large Devices ----*/
+
+@media only screen and (min-width: 1000px) {
+  .proem p {
+    font-size: 20px;
+  }
+}

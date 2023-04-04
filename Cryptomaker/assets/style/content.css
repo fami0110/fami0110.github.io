@@ -215,8 +215,13 @@ input::-webkit-inner-spin-button {
     min-height: 150px;
   }
 
+  .input-field {
+    z-index: 1;
+  }
+
   .output-field {
-    margin: 0 2rem;
+    margin: -1rem 4vw 0;
+    padding-top: 1.5rem;
     border-radius: 0 0 1.5rem 1.5rem;
   }
 

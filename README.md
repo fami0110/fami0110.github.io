@@ -1,4 +1,4 @@
-# My Portofolio Website
+# My Portfolio Website
 See my top project :
 <br>1. [MnF Gallery](https://mnf-gallery.vercel.app)
 <br>2. [Items](https://items-alpha.vercel.app)

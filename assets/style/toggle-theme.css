@@ -1,0 +1,53 @@
+/* toggle theme */
+
+.toggle-container {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+}
+
+input#toggle-check,
+.toggle-icon,
+.toggle-fill {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.toggle-container input#toggle-check {
+  z-index: 3;
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.toggle-container .toggle-icon {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: var(--txt-color);
+  font-size: 2rem;
+  transition: transform 0.3s ease-out;
+  cursor: default;
+}
+
+.toggle-container .toggle-fill {
+  content: "";
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  background-color: var(--txt-color);
+  border-radius: 50%;
+  transition: transform 0.3s ease-out;
+}
+
+input:checked#toggle-check ~ .toggle-icon {
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+input:checked#toggle-check ~ .toggle-fill {
+  transform: translate(-50%, -50%) scale(1.4) translateX(-3px);
+}

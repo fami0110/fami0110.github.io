@@ -1,4 +1,5 @@
-// Toggle dark mode
+// Toggle Dark Mode
+
 let mode = 'light';
 const toggle = document.getElementById('toggle-check');
 
@@ -27,3 +28,13 @@ toggle.addEventListener('click', (e) => {
 })
 
 updateMode(mode);
+
+// Toggle Menu
+
+document.getElementById('menu-toggle').addEventListener('click', (e) => {
+  if (e.target.checked) {
+    document.querySelector('header nav ul').classList.add('active');
+  } else {
+    document.querySelector('header nav ul').classList.remove('active');
+  }
+});

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap');
+@import url('header.css');
+@import url('footer.css');
 @import url('wave.css');
 @import url('toggle-theme.css');
 
@@ -16,10 +18,10 @@
 
 :root {
   --bg-color: white;
-  --nav-color: #ffffffcc;
   --txt-color: #161616;
+  --nav-color: #ffffffcc;
   
-  --primary-color: #4090f0;
+  --primary-color: #0d99ff;
   --secondary-color: #49ccff;
 
   scroll-behavior: smooth;
@@ -27,8 +29,8 @@
 
 .darkmode {
   --bg-color: #161616;
-  --nav-color: #161616cc;
   --txt-color: white;
+  --nav-color: #161616cc;
 }
 
 body {
@@ -49,44 +51,6 @@ a {
   font-family: 'Quicksand', sans-serif;
 }
 
-/* Header */
-
-header {
-  position: fixed;
-  width: 100%;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  z-index: 99;
-  background-color: var(--nav-color);
-  backdrop-filter: blur(2px);
-}
-
-header .logo {
-  color: var(--primary-color);
-  flex-grow: 1;
-}
-
-nav li {
-  list-style: none;
-  display: inline-block;
-  padding: 8px;
-  margin-right: 1.5rem;
-}
-
-nav li a {
-  display: inline-block;
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
-
-nav li a:hover {
-  transform: scale(1.2);
-  color: var(--primary-color);
-}
-
 /* Main */
 
 section {
@@ -98,41 +62,4 @@ section {
 section#home {
   background-color: var(--bg-color);
   margin-bottom: 8rem;
-}
-
-/* Footer */
-
-footer {
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  background-color: #1f1f1f;
-}
-
-.copyright {
-  font-family: "Quicksand", sans-serif;
-  color: #c8c8c8;
-  padding: 6px 1rem;
-  margin-right: 1rem;
-  border-right: 3px solid #646464;
-}
-
-.copyright b {
-  color: white;
-}
-
-.social-media {
-  filter: invert(80%);
-  height: 30px;
-  position: relative;
-  top: 1px;
-  margin-right: 8px;
-  transition: 0.3s ease;
-}
-
-.social-media:hover {
-  filter: invert(100%);
-  top: -3px;
 }

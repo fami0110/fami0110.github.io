@@ -38,3 +38,20 @@ document.getElementById('menu-toggle').addEventListener('click', (e) => {
     document.querySelector('header nav ul').classList.remove('active');
   }
 });
+
+// Text Animation
+
+let element = document.querySelector('#home p');
+let text = ['Hello World!', 'Typing....', '2M?jdQb=', 'My name is,'];
+let i = 1;
+
+element.innerText = text[0];
+
+setInterval(() => {
+  element.innerText = text[i];
+  if (i == (text.length - 1)) {
+    i = 0;
+  } else {
+    i++;
+  }
+}, 4000);

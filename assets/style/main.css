@@ -21,6 +21,7 @@
   --txt-color: #161616;
   --nav-color: #ffffffcc;
   
+  --darken-color: #1a69fb;
   --primary-color: #0d99ff;
   --secondary-color: #49ccff;
 
@@ -55,11 +56,136 @@ a {
 
 section {
   position: relative;
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
   min-height: 600px;
 }
 
 section#home {
-  background-color: var(--bg-color);
   margin-bottom: 8rem;
+  padding-top: 4.4rem;
+  padding-bottom: 2rem;
+  justify-content: space-around;
+  background-color: var(--bg-color);
+}
+
+#home p {
+  display: inline-block;
+  position: relative;
+  font-size: 24px;
+  font-family: monospace;
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+}
+
+#home p::before, 
+#home p::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: typewriter 4s steps(12) infinite;
+}
+
+#home p::before {
+  background-color: var(--bg-color);
+  animation: typewriter 4s steps(12) infinite;
+}
+
+#home p::after {
+  width: 6px;
+  background-color: var(--txt-color);
+  animation: 
+    typewriter 4s steps(12) infinite,
+    blink 1s linear infinite;
+}
+
+@keyframes typewriter {
+  0% {
+    left: 0;
+  }
+  40%, 80% {
+    left: 100%;
+  }
+  96%, 100% {
+    left: 0;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#home h2 {
+  margin: 4px 0 8px;
+  font-size: 42px;
+  cursor: default;
+}
+
+#home h2 span {
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+#home h2:hover span {
+  color: var(--primary-color);
+}
+
+#home h3 {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+#home a {
+  display: inline-block;
+  margin-top: 3rem;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+#home a:hover {
+  background-color: var(--darken-color);
+}
+
+#home picture {
+  max-width: 368px;
+}
+
+#home picture img {
+  position: relative;
+  bottom: 1rem;
+  width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+  section#home {
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  #home picture {
+    max-width: 300px;
+  }
+
+  #home picture img {
+    bottom: 0;
+  }
+
+  #home h2 {
+    font-size: clamp(36px, 6vw, 42px);
+  }
 }

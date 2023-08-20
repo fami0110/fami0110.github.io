@@ -1,7 +1,7 @@
 // Toggle Dark Mode
 
 let mode = 'light';
-const toggle = document.getElementById('toggle-check');
+const toggle = document.getElementById('toggle-mode');
 
 if (typeof(Storage) !== 'undefined') {
   if (localStorage.getItem('mode') !== null) {
@@ -47,11 +47,27 @@ let i = 1;
 
 element.innerText = text[0];
 
-setInterval(() => {
-  element.innerText = text[i];
-  if (i == (text.length - 1)) {
-    i = 0;
-  } else {
-    i++;
+element.addEventListener("animationiteration", (e) => {
+  if (e.animationName === "typewriter" && e.pseudoElement === "::before") {
+    element.innerText = text[i];
+    if (i == (text.length - 1)) {
+      i = 0;
+    } else {
+      i++;
+    }
   }
-}, 4000);
+});
+
+// Slice title
+
+document.querySelectorAll('.float').forEach(e => {
+  let sliced_text = e.innerText.split('');
+  e.innerHTML = '<span>' + sliced_text.join('</span><span>');
+})
+
+// Tilt Card
+
+VanillaTilt.init(document.querySelectorAll(".card"), {
+  glare: true,
+  "max-glare": 0.5
+});

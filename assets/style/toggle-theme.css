@@ -6,7 +6,7 @@
   height: 2rem;
 }
 
-input#toggle-check,
+input#toggle-mode,
 .toggle-icon,
 .toggle-fill {
   position: absolute;
@@ -15,7 +15,7 @@ input#toggle-check,
   left: 50%;
 }
 
-.toggle-container input#toggle-check {
+.toggle-container input#toggle-mode {
   z-index: 3;
   width: 1.5rem;
   height: 1.5rem;
@@ -44,10 +44,10 @@ input#toggle-check,
   transition: transform 0.3s ease-out;
 }
 
-input:checked#toggle-check ~ .toggle-icon {
+input:checked#toggle-mode ~ .toggle-icon {
   transform: translate(-50%, -50%) rotate(180deg);
 }
 
-input:checked#toggle-check ~ .toggle-fill {
+input:checked#toggle-mode ~ .toggle-fill {
   transform: translate(-50%, -50%) scale(1.4) translateX(-3px);
 }

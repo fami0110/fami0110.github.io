@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="/assets/style/main.css">
 </head>
+
 <body>
   <header>
-    <a class="logo" href="/"><h1>masandofami</h1></a>
+    <a class="logo" href="/">
+      <h1 translate="no">masandofami</h1>
+    </a>
     <nav>
       <div class="menu">
         <input type="checkbox" id="menu-toggle">
@@ -28,8 +32,8 @@
     </nav>
     <div>
       <div class="toggle-container">
-        <input type="checkbox" id="toggle-check" title="Toggle Mode" />
-        <i class="material-icons toggle-icon">&#xe3aa;</i>
+        <input type="checkbox" id="toggle-mode" title="Toggle Mode" />
+        <i class="material-icons toggle-icon" translate="no">&#xe3aa;</i>
         <span class="toggle-fill"></span>
       </div>
     </div>
@@ -38,8 +42,8 @@
     <section id="home">
       <article>
         <p>Hello World!</p>
-        <h2>Ma<span>sando</span> Fami Ramadhan</h2>
-        <h3>Student | Web Developer</h3>
+        <h2 translate="no">Ma<span>sando</span> Fami Ramadhan</h2>
+        <h3 translate="no">Student | Web Developer</h3>
         <a href="#about">See More</a>
       </article>
       <picture>
@@ -52,16 +56,72 @@
         <div class="wave"></div>
       </div>
     </section>
-    <section id="about"></section>
+    <section id="about">
+      <h2 class="float">About Me</h2>
+      <p>Hello, my name is <b>Masando Fami Ramadhan</b>. My status now is as student at SMKN 4 Malang. I have experience in software
+        development for about 2 years. Now I'm interested at web programing, and I choose backend dev as my role.</p>
+      <br><br><br><br><br>
+      <h2 class="float">My Skilz</h2>
+      <br>
+      <article>
+        <div class="card">
+          <img src="/assets/img/card1.png" alt="card-1-img">
+          <div class="card-body">
+            <h3>HTML, CSS, JS</h3>
+            <p>I have many experience for using html-css-js, which allow me to build a website from scratch.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/assets/img/card2.png" alt="card-2-img">
+          <div class="card-body">
+            <h3>Back End</h3>
+            <p>My main language for backend dev is PHP and MySQL. Im also use Laravel framework.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/assets/img/card3.png" alt="card-3-img">
+          <div class="card-body">
+            <h3>Git</h3>
+            <p>Collaboration? Of cource! <br>I used git and github for that.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/assets/img/card4.png" alt="card-4-img">
+          <div class="card-body">
+            <h3>Bootstrap</h3>
+            <p>Now i used Bootstrap for my frontend framework.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/assets/img/card5.png" alt="card-5-img">
+          <div class="card-body">
+            <h3>LMMS</h3>
+            <p>One of my hobbies is creating music with LMMS.<br>Only just for fun:)</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="/assets/img/card6.png" alt="card-6-img">
+          <div class="card-body">
+            <h3>Other</h3>
+            <p>I'm also has experience with Python and C++. Although I'm until now still learning more technologies;D</p>
+          </div>
+        </div>
+      </article>
+      <br>
+    </section>
     <section id="portfolio"></section>
     <section id="contact"></section>
   </main>
   <footer>
     <p class="copyright">&copy 2023 <b>Masando Fami</b></p>
-    <a class="social-media" href="https://www.instagram.com/masandofami_0110" target="_blank"><img src="https://img.icons8.com/small/30/000000/instagram-new.png" /></a>
-    <a class="social-media" href="https://wa.me/qr/ZIR6IYUS3NKLD1" target="_blank"><img src="https://img.icons8.com/small/30/000000/whatsapp.png" /></a>
+    <a class="social-media" href="https://www.instagram.com/masandofami_0110" target="_blank"><img
+        src="https://img.icons8.com/small/30/000000/instagram-new.png" /></a>
+    <a class="social-media" href="https://wa.me/qr/ZIR6IYUS3NKLD1" target="_blank"><img
+        src="https://img.icons8.com/small/30/000000/whatsapp.png" /></a>
   </footer>
   <!-- script -->
+  <script src="/assets/js/vanilla-tilt-min.js"></script>
   <script src="/assets/js/main.js"></script>
 </body>
+
 </html>

@@ -2,6 +2,7 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('wave.css');
+@import url('float.css');
 @import url('toggle-theme.css');
 
 /* CSS Reset */
@@ -12,6 +13,15 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   /* outline: 1px solid red; */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+*:not(h1, h2) {
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* Root */
@@ -25,7 +35,13 @@
   --primary-color: #0d99ff;
   --secondary-color: #49ccff;
 
+  --txt-title: clamp(42px, 7vw, 54px);
+  --txt-large: clamp(36px, 6vw, 42px);
+  --txt-medium: 24px;
+  --txt-normal: clamp(18px, 2vw, 20px);
+
   scroll-behavior: smooth;
+  scroll-padding-top: 4.4rem;
 }
 
 .darkmode {
@@ -39,41 +55,35 @@ body {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-  color: var(--txt-color);
   background: linear-gradient(-90deg, var(--primary-color), var(--secondary-color));
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-*:not(h1, h2, h3, h4, h5, h6) {
-  font-family: 'Quicksand', sans-serif;
-}
-
-/* Main */
-
+/* Section */
 section {
-  position: relative;
-  display: flex;
-  align-items: center;
   padding: 2rem;
   min-height: 600px;
 }
 
+/* Home Section */
+
 section#home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 8rem;
   padding-top: 4.4rem;
   padding-bottom: 2rem;
+  flex-direction: row;
   justify-content: space-around;
   background-color: var(--bg-color);
+  color: var(--txt-color);
 }
 
 #home p {
   display: inline-block;
   position: relative;
-  font-size: 24px;
+  font-size: var(--txt-medium);
   font-family: monospace;
   background-color: var(--txt-color);
   color: var(--bg-color);
@@ -126,7 +136,7 @@ section#home {
 
 #home h2 {
   margin: 4px 0 8px;
-  font-size: 42px;
+  font-size: var(--txt-large);
   cursor: default;
 }
 
@@ -140,9 +150,8 @@ section#home {
 }
 
 #home h3 {
-  font-family: 'Quicksand', sans-serif;
   font-weight: normal;
-  font-size: 24px;
+  font-size: var(--txt-medium);
 }
 
 #home a {
@@ -184,8 +193,136 @@ section#home {
   #home picture img {
     bottom: 0;
   }
+}
 
-  #home h2 {
-    font-size: clamp(36px, 6vw, 42px);
+/* About Section */
+
+section#about {
+  padding: 3rem clamp(1rem, 5vw, 3rem);
+  text-align: center;
+}
+
+#about > h2 {
+  margin: 2rem 0 1rem;
+  font-size: var(--txt-title);
+  letter-spacing: 2px;
+}
+
+#about > p {
+  display: inline-block;
+  max-width: 800px;
+  font-size: var(--txt-normal);
+  text-align: center;
+}
+
+#about article {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  gap: 1.5rem;
+}
+
+#about .card {
+  min-height: 200px;
+  max-height: 200px;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  color: white;
+  background-color: gray;
+  border-radius: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+#about .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 1rem;
+  gap: 8px;
+  z-index: 12;
+  text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+#about .card:hover .card-body {
+  transform: translateZ(30px);
+}
+
+.card h3 {
+  width: max-content;
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+}
+
+.card p {
+  max-width: 360px;
+  font-size: 16px;
+}
+
+.card img {
+  max-width: 160px;
+  max-height: 160px;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  opacity: 0.25;
+}
+
+#about .card:nth-of-type(1) {
+  grid-column: span 2;
+  background: linear-gradient(90deg, #252451, #3d19a5);
+}
+
+#about .card:nth-of-type(2) {
+  background: #6d42e8;
+}
+
+#about .card:nth-of-type(3) {
+  background: #f46b46;
+}
+
+#about .card:nth-of-type(4) {
+  background: #643fa0;
+}
+
+#about .card:nth-of-type(5) {
+  grid-column: span 2;
+  background: #39c223;
+}
+
+#about .card:nth-of-type(6) {
+  background: #873535;
+}
+
+@media only screen and (max-width: 678px) {
+  #about .card:nth-of-type(1) {
+    grid-column: unset;
   }
+}
+
+@media only screen and (max-width: 1260px) {
+  #about .card:nth-of-type(5) {
+    grid-column: unset;
+  }
+}
+
+/* Portfolio Section */
+section#portfolio {
+  padding: 3rem;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Contact Section */
+section#contact {
+  padding: 3rem;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
 }

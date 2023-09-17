@@ -2,7 +2,7 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('wave.css');
-@import url('float.css');
+@import url('title.css');
 @import url('toggle-theme.css');
 
 /* CSS Reset */
@@ -30,6 +30,7 @@ a {
   --bg-color: white;
   --txt-color: #161616;
   --nav-color: #ffffffcc;
+  --bg-secondary: #dfe2e7;
   
   --darken-color: #1a69fb;
   --primary-color: #0d99ff;
@@ -48,6 +49,7 @@ a {
   --bg-color: #161616;
   --txt-color: white;
   --nav-color: #161616cc;
+  --bg-secondary: #303134;
 }
 
 body {
@@ -56,6 +58,23 @@ body {
   justify-content: space-between;
   min-height: 100vh;
   background: linear-gradient(-90deg, var(--primary-color), var(--secondary-color));
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: unset;
+  outline: unset;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--darken-color);
 }
 
 /* Section */
@@ -97,7 +116,6 @@ section#home {
   bottom: 0;
   left: 0;
   right: 0;
-  animation: typewriter 4s steps(12) infinite;
 }
 
 #home p::before {
@@ -155,19 +173,7 @@ section#home {
 }
 
 #home a {
-  display: inline-block;
   margin-top: 3rem;
-  padding: 12px 20px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 12px;
-  background-color: var(--primary-color);
-  color: var(--bg-color);
-  transition: background-color 0.3s ease;
-}
-
-#home a:hover {
-  background-color: var(--darken-color);
 }
 
 #home picture {
@@ -200,12 +206,6 @@ section#home {
 section#about {
   padding: 3rem clamp(1rem, 5vw, 3rem);
   text-align: center;
-}
-
-#about > h2 {
-  margin: 2rem 0 1rem;
-  font-size: var(--txt-title);
-  letter-spacing: 2px;
 }
 
 #about > p {
@@ -316,13 +316,208 @@ section#about {
 /* Portfolio Section */
 section#portfolio {
   padding: 3rem;
-  gap: 1rem;
-  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#portfolio .container {
+  margin-top: 3rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 4rem;
+  /* outline: 1px solid red; */
+}
+
+#portfolio .window {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#portfolio .window-title {
+  position: relative;
+  padding: 12px 2rem 0;
+  background-color: var(--bg-color);
+}
+
+#portfolio .window-title h3 {
+  position: relative;
+  display: inline-block;
+  padding: 8px 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-secondary);
+  border-radius: 12px 12px 0 0;
+}
+
+.window-title h3::before,
+.window-title h3::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  bottom: -8px;
+  position: absolute;
+  background-color: transparent;
+  border-bottom: 8px solid var(--bg-secondary);
+}
+
+#portfolio .window-title h3::before {
+  left: -1rem;
+  border-radius: 0 0 1rem 0;
+  border-right: 8px solid var(--bg-secondary);
+}
+
+#portfolio .window-title h3::after {
+  right: -1rem;
+  border-radius: 0 0 0 1rem;
+  border-left: 8px solid var(--bg-secondary);
+}
+
+.window-title .decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 120px;
+}
+
+.window-title .decoration::after {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fdbb3d;
+  border-radius: 50%;
+  box-shadow: 26px 0 #f65152, -26px 0 #70cc82;
+}
+
+#portfolio .window-url {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background-color: var(--bg-secondary);
+}
+
+#portfolio .window-url > i {
+  opacity: 0.8;
+  transform: translateY(2px);
+  cursor: default;
+}
+
+#portfolio .window-url a {
+  position: relative;
+  flex-grow: 1;
+  display: inline-block;
+  font-size: 12px;
+  padding: 8px 1rem;
+  padding-left: 2rem;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 2rem;
+  background-color: var(--bg-color);
+}
+
+#portfolio .window-url a i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}
+
+#portfolio .window-content {
+  display: flex;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+#portfolio .window-content img {
+  width: 100%;
 }
 
 /* Contact Section */
 section#contact {
   padding: 3rem;
-  gap: 1rem;
-  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#contact form {
+  max-width: 800px;
+  background-color: var(--bg-color);
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 16px;
+}
+
+#contact .field {
+  position: relative;
+  height: 3rem;
+  margin-bottom: 1rem;
+
+}
+
+#contact .field:last-of-type {
+  height: 6rem;
+}
+
+#contact :is(input, textarea) {
+  outline: unset;
+  border: unset;
+  padding: 8px 1rem;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  border: 1px solid var(--txt-color);
+  border-radius: 6px;
+}
+
+#contact textarea {
+  padding: 15px 1rem;
+  resize: none;
+}
+
+#contact label {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  padding: 0 8px;
+  font-size: 12px;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  transition: 0.3s ease;
+  transition-property: top, font-size;
+}
+
+#contact textarea:placeholder-shown ~ label,
+#contact input:placeholder-shown ~ label {
+  top: 12px;
+  font-size: 1rem;
+}
+
+#contact textarea:focus ~ label,
+#contact input:focus ~ label {
+  top: -8px;
+  font-size: 12px;
+}
+
+#contact textarea::placeholder,
+#contact input::placeholder {
+  visibility: hidden;
+}
+
+#contact #button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 1rem;
 }

@@ -6,31 +6,31 @@ footer {
   justify-content: center;
   align-items: center;
   font-size: 18px;
-  background-color: #1f1f1f;
+  color: var(--txt-color);
+  background-color: var(--nav-color);
 }
 
 .copyright {
   font-family: "Quicksand", sans-serif;
-  color: #c8c8c8;
   padding: 6px 1rem;
   margin-right: 1rem;
   border-right: 3px solid #646464;
 }
 
-.copyright b {
-  color: white;
-}
-
 .social-media {
-  filter: invert(80%);
   height: 30px;
   position: relative;
   top: 1px;
   margin-right: 8px;
+  opacity: 0.8;
   transition: 0.3s ease;
 }
 
 .social-media:hover {
-  filter: invert(100%);
   top: -3px;
+  opacity: 1;
+}
+
+body.darkmode .social-media {
+  filter: invert(100%);
 }

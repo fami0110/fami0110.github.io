@@ -1,38 +1,42 @@
-.float {
+.title {
   width: max-content;
   margin-left: auto !important;
   margin-right: auto !important;
+  margin: 2rem 0 1rem;
+  font-size: var(--txt-title);
+  letter-spacing: 2px;
   animation: floating 5s ease-in-out alternate infinite;
   cursor: default;
+  translate: unset;
 }
 
-.float:nth-of-type(3n+0) {
+.title:nth-of-type(3n+0) {
   animation-duration: 4s;
 }
 
-.float:nth-of-type(3n+1) {
+.title:nth-of-type(3n+1) {
   animation-duration: 5s;
 }
 
-.float:nth-of-type(3n+2) {
+.title:nth-of-type(3n+2) {
   animation-duration: 3s;
 }
 
 
-.float span {
+.title span {
   font-family: inherit;
   text-shadow: 2px 3px 0 rgba(255, 255, 255, 0.8);
   transition: 0.2s ease;
   transition-property: font-size, color;
 }
 
-.float:hover span {
+.title:hover span {
   text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.4);
   color: #ffffffbc;
   font-size: 80%;
 }
 
-.float span:hover {
+.title span:hover {
   color: white;
   font-size: 100%;
 }

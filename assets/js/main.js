@@ -60,9 +60,9 @@ element.addEventListener("animationiteration", (e) => {
 
 // Slice title
 
-document.querySelectorAll('.float').forEach(e => {
+document.querySelectorAll('.title').forEach(e => {
   let sliced_text = e.innerText.split('');
-  e.innerHTML = '<span>' + sliced_text.join('</span><span>');
+  e.innerHTML = '<span translate="no">' + sliced_text.join('</span><span translate="no">') + '</span>';
 })
 
 // Tilt Card
@@ -70,4 +70,30 @@ document.querySelectorAll('.float').forEach(e => {
 VanillaTilt.init(document.querySelectorAll(".card"), {
   glare: true,
   "max-glare": 0.5
+});
+
+// EmailJS for Contact Me
+(function(){
+  emailjs.init("SaF0lnzFSeXz8fh32");
+})();
+
+const btn = document.getElementById('button');
+
+document.getElementById('form').addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   if (confirm("Do you want to send this email?")) {
+    btn.innerText = 'Sending...';
+
+    const serviceID = 'service_3otccbb';
+    const templateID = 'template_5cmbhli';
+
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(() => {
+        console.log('Sent!');
+      }, (err) => {
+        console.log(JSON.stringify(err));
+      })
+      .finally(() => {btn.innerText = 'Submit';});
+   }
 });

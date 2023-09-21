@@ -294,7 +294,7 @@ section#about {
 
 #about .card:nth-of-type(5) {
   grid-column: span 2;
-  background: #39c223;
+  background: #f4c81a;
 }
 
 #about .card:nth-of-type(6) {
@@ -315,7 +315,7 @@ section#about {
 
 /* Portfolio Section */
 section#portfolio {
-  padding: 3rem;
+  padding: 3rem clamp(1rem, 5vw, 3rem);
 }
 
 #portfolio .container {
@@ -327,7 +327,6 @@ section#portfolio {
   flex-wrap: wrap;
   column-gap: 2rem;
   row-gap: 4rem;
-  /* outline: 1px solid red; */
 }
 
 #portfolio .window {
@@ -351,6 +350,7 @@ section#portfolio {
   position: relative;
   display: inline-block;
   padding: 8px 1.2rem;
+  font-size: var(--txt-normal);
   font-family: 'Roboto', sans-serif;
   background-color: var(--bg-secondary);
   border-radius: 12px 12px 0 0;
@@ -421,6 +421,9 @@ section#portfolio {
   padding: 8px 1rem;
   padding-left: 2rem;
   font-family: 'Roboto', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   border-radius: 2rem;
   background-color: var(--bg-color);
 }
@@ -446,7 +449,7 @@ section#portfolio {
 
 /* Contact Section */
 section#contact {
-  padding: 3rem;
+  padding: 3rem clamp(1rem, 5vw, 3rem);
 }
 
 #contact form {

@@ -349,11 +349,20 @@ section#portfolio {
 #portfolio .window-title h3 {
   position: relative;
   display: inline-block;
+  max-width: 50vw;
   padding: 8px 1.2rem;
-  font-size: var(--txt-normal);
-  font-family: 'Roboto', sans-serif;
   background-color: var(--bg-secondary);
   border-radius: 12px 12px 0 0;
+}
+
+#portfolio .window-title h3 span {
+  display: inline-block;
+  width: 100%;
+  font-size: var(--txt-normal);
+  font-family: 'Roboto', sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .window-title h3::before,
@@ -363,6 +372,7 @@ section#portfolio {
   height: 1rem;
   bottom: -8px;
   position: absolute;
+  z-index: 3;
   background-color: transparent;
   border-bottom: 8px solid var(--bg-secondary);
 }
